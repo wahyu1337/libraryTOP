@@ -2,6 +2,7 @@ const myLibrary = [];
 
 // Constructor
 function Book(title, author, pages, status, cover){
+    this.bookId = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -12,6 +13,7 @@ function Book(title, author, pages, status, cover){
 // get book info (with prototype)
 Book.prototype.getInfo = function(){
     console.log(`
+        Id: ${this.bookId}
         Title: ${this.title}
         Author: ${this.author}
         Pages: ${this.pages}
