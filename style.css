@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-fieldset{
-    border: none;        
-}
-
 input[type="text"],
 input[type="number"] {
     width: 200px;
@@ -26,7 +22,7 @@ input[type="number"] {
 .container{
     display: grid;
     height: 100vh;
-    grid-template-columns: minmax(250px, 300px) 1fr;
+    grid-template-columns: minmax(250px, 400px) 1fr;
 }
 
 .form{
@@ -38,7 +34,7 @@ input[type="number"] {
 
     /* some custom */
     gap: 20px;
-    padding: 50px 40px;
+    padding: 50px 60px;
     box-shadow: 6px 0px 10px -4px rgba(0,0,0,0.49);
     border-radius: 2px;;
 }
@@ -52,12 +48,54 @@ input[type="number"] {
 .form-group{
     display: grid;
     gap: 7px;
+    max-width: 300px;
 }
+
+.cover{
+    display: grid;
+    padding: 14px 12px;  
+    max-width: 200px;
+    gap: 15px;
+    max-width: 300px;
+}
+
+.cover legend{
+    font-size: 0.9rem;
+}
+
+.cover-image{
+    font-size: 1rem;
+}
+
+input[type="file"]{
+    font-size: 0.9rem;
+}
+
+.uploadCoverImage{
+    font-size: 0.9rem;
+    padding: 8px;
+    width: 120px;
+    height: auto;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: rgb(25, 121, 231);
+    box-shadow:3px 5px 15px -9px #3d3d3d;
+    cursor: pointer;
+}
+
+.uploadCoverImage:hover{
+    transition: 0.09s;
+    background-color: rgb(68, 143, 228);;
+}
+
 
 .read{
     display: grid;
     grid-template-columns: repeat(2, min-content);
     gap: 6px;
+    max-width: 200px;
+    padding: 0 8px;
 }
 
 .read legend{
@@ -84,59 +122,23 @@ input[type="number"] {
     transition: 0.09s;
 }
 /* Display div */
-.title{
+.display{
     grid-column: 2/3;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr)) minmax(150px, 200px) minmax(150px, 200px) minmax(150px, 250px) minmax(150px, 200px);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-auto-rows: min-content;
     padding: 50px 50px;
 }
 
-.displayTitle,
-.displayAuthor,
-.displayPages,
-.displayReadStatus,
-.displayCover,
-.displayDelete {
+.contentTitle{
     display: grid;
-    grid-template-rows: min-content;
-    grid-template-columns: 1fr;
-}
-
-.displayReadStatus{
-    width: 200px;
-}
-
-.contentTitle,
-.contentAuthor,
-.contentPages,
-.contentReadStatus,
-.contentCover,
-.contentDelete {
-    padding: 12px;
+    grid-template-columns: repeat(2, 1fr) repeat(2, minmax(100px, 200px)) minmax(150px, 200px) minmax(100px, 150px);
     justify-items: center;
-}
-
-.contentReadStatus{
-    color: rgb(28, 167, 28);
-}
-
-.contentCover{
-    justify-self: center;
-}
-
-.coverImg{
-    width: 80px;
-    height: auto;
-}
-
-.delete{
-    padding: 3px 8px;
-    border-radius: 50%;
-    border:none;
+    border: 1px solid black;
+    background-color: rgb(74, 136, 74);
     color: white;
-    background-color: red;
-    box-shadow: 2px 2px 7px rgba(0,0,0,0.49);
 }
 
 .headTitle,
@@ -145,7 +147,100 @@ input[type="number"] {
 .headReadStatus,
 .headCover,
 .headDelete{
+    width: 100%;
+    border: 1px solid black;
+
     display: grid;
-    justify-content: center;
-    border: 2px solid black;
+    justify-items: center;
+}
+
+.headTitle{
+    grid-column: 1/2;
+}
+
+.headAuthor{
+    grid-column: 2/3;
+}
+
+.headPages{
+    grid-column: 3/4;
+}
+
+.headReadStatus {
+    grid-column: 4/5;
+}
+
+.headCover{
+    grid-column: 5/6;
+}
+
+.headDelete{
+    grid-column: 6/7;
+}
+
+.mainContent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) repeat(2, minmax(100px, 200px)) minmax(150px, 200px) minmax(100px, 150px);
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.mainContentTitle,
+.mainContentAuthor,
+.mainContentPages,
+.mainContentReadStatus,
+.mainContentCover,
+.mainContentDelete{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+.mainContentTitle{
+    grid-column: 1/2;
+}
+
+.mainContentAuthor{
+    grid-column: 2/3;    
+}
+.mainContentPages{
+    grid-column: 3/4;
+}
+.mainContentReadStatus{
+    grid-column: 4/5;
+}
+.mainContentCover{
+    grid-column: 5/6;
+}
+.mainContentDelete{
+    grid-column: 6/7;
+}
+
+.mainContentCover{
+    padding: 5px;
+}
+
+.coverImg{
+    width: 70px;
+    height: auto;
+}
+
+.delete{
+    background-color: rgb(207, 25, 25);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 2% 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.49);
+    cursor: pointer;
+    max-width: 40px;
+    max-height: 30px;
+}
+
+.delete:hover{
+    background-color: rgb(209, 63, 63);
 }

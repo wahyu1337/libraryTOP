@@ -25,6 +25,15 @@
                 <label for="pages">Pages</label>
                 <input type="number" id="pages" class="pages" name="pages">
                 </div>
+                    
+                <div class="form-group">                    
+                        <fieldset class="cover">
+                            <legend>Select an Cover Image</legend>
+                            <input type="file" accept=".jpg, .jpeg, .png, .gif" id="image-upload">
+                            <button type="submit" class="uploadCoverImage" value="uploadImg">Upload Image</button>
+                        </fieldset>                    
+                </div>
+                
 
                 <div class="form-group">
                 <fieldset class="read">
@@ -42,63 +51,60 @@
             </form>
         </div>
 
-        <div class="title">
-            <div class="displayTitle">        
+        <div class="display">
+            <div class="contentTitle">
+                <!-- TITLE -->    
                 <div class="headTitle">
                     <label for="title">TITLE</label>
                 </div>
-                <div class="contentTitle">
-                    <p>The Witcher: Blood Origin</p>
-                </div>
-            </div>
-
-            <div class="displayAuthor">
+                <!-- AUTHOR -->
                 <div class="headAuthor">
                     <label for="author">AUTHOR</label>
-                </div>
-                <div class="contentAuthor">
-                    <p>Andrzej Sapkowski</p>
-                </div>
-            </div>
-
-            <div class="displayPages">
+                </div>                
+                <!-- PAGES -->                
                 <div class="headPages">
                     <label for="pages">PAGES</label>
-                </div>
-                <div class="contentPages">
-                    <p>350</p>
-                </div>
-            </div>
-
-            <div class="displayReadStatus">
+                </div>        
+                <!-- Status -->                
                 <div class="headReadStatus">
                     <label for="status">STATUS</label>
                 </div>
-                <div class="contentReadStatus">
-                    <p>READ</p>
-                </div>
-            </div>
-
-            <div class="displayCover">
+                <!-- COVER -->
                 <div class="headCover">
-                    <label for="">COVER</label>
+                    <label for="cover">COVER</label>
                 </div>
-                <div class="contentCover">
-                    <img src="cover/91mXC-HDXzL.jpg" alt="" class="coverImg">
-                </div>
-            </div>
-
-            <div class="displayDelete">
+                <!-- DELETE -->                
                 <div class="headDelete">
                     <label for="delete">DELETE</label>
                 </div>
-                <div class="contentDelete">
-                    <button type="button" class="delete">X</button>
-                </div>                
             </div>
-        </div>
 
-        <div class="content"></div>
+            <div class="mainContent">        
+                <div class="mainContentTitle">
+                    <p>The Witcher: Blood Origin</p>
+                </div>
+
+                <div class="mainContentAuthor">
+                    <p>Andrzej Sapkowski</p>
+                </div>
+
+                <div class="mainContentPages">
+                    <p>350</p>
+                </div>
+
+                <div class="mainContentReadStatus">
+                    <p>READ</p>
+                </div>
+
+                <div class="mainContentCover">
+                    <img src="cover/91mXC-HDXzL.jpg" alt="cover" class="coverImg">
+                </div>
+
+                <div class="mainContentDelete">
+                    <button type="button" class="delete">X</button>
+                </div>  
+            </div>            
+        </div>
     </div>
 </body>
 </html>
