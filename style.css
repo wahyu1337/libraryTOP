@@ -21,7 +21,7 @@ input[type="number"] {
 }
 
 /* Custom setup */
-.container {
+#container {
     display: grid;
     height: 100vh;
     grid-template-columns: minmax(min-content,400px) 2fr;

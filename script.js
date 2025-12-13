@@ -28,10 +28,32 @@ function AddToLibrary(title, author, pages, status, cover){
     myLibrary.push(book);
 }
 
-AddToLibrary("The Witcher 3", "Andrzej Sapkowski", "230", "UnREAD",);
+AddToLibrary("The Witcher 3", "Andrzej Sapkowski", "230", "UNREAD",);
 AddToLibrary("Harry Potters", "J.K Rowwling", "287", "READ");
-AddToLibrary("Breaking Bad", "Vince Gilligan", "312", "READ");
 
-for(const book in myLibrary){
-    console.log(myLibrary[book]);
-}
+
+// page display
+// document manipulation
+const container = document.querySelector("#container");
+
+// element create   
+
+// submit button
+const submitBtn = document.querySelector('.submit');
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    // get the data
+    const titleValue = document.querySelector('#title').value;
+    const authorValue = document.querySelector('#author').value;
+    const pagesValue = document.querySelector ('#pages').value;
+    const coverValue = document.querySelector('#image-upload').value;
+    const readValue = document.querySelector('input[name="readStatus"]:checked').value;
+    const statusValue = readValue ? readValue.value : 'UNREAD';
+
+    // add the book to library;
+    AddToLibrary(titleValue, authorValue, pagesValue, statusValue, coverValue);
+    console.log(myLibrary);
+
+    // clear the container
+    container.innerHTML = '';
+});
