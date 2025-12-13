@@ -20,7 +20,18 @@ Book.prototype.getInfo = function(){
         Status ${this.status}`)
 };
 
-const book1 = new Book("Harry Potters", "J.K Rowwling", "287", "READ");
-const book2 = new Book("The Witcher 3", "Andrzej Sapkowski", "230", "UnREAD");
-book1.getInfo();
-book2.getInfo();
+// add to library method
+function AddToLibrary(title, author, pages, status, cover){ 
+    const book = new Book (title, author, pages, status, cover);
+    
+    //push the book to library
+    myLibrary.push(book);
+}
+
+AddToLibrary("The Witcher 3", "Andrzej Sapkowski", "230", "UnREAD",);
+AddToLibrary("Harry Potters", "J.K Rowwling", "287", "READ");
+AddToLibrary("Breaking Bad", "Vince Gilligan", "312", "READ");
+
+for(const book in myLibrary){
+    console.log(myLibrary[book]);
+}
