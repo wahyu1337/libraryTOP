@@ -32,43 +32,46 @@ function AddToLibrary(title, author, pages, status, cover){
 // document manipulation
 const container = document.querySelector('#container');
 const display = document.querySelector('.display');
-// child elements
-const mainContent = document.createElement('div');
-const mainContentTitle = document.createElement('div');
-const mainContentAuthor = document.createElement('div');
-const mainContentPages = document.createElement('div');
-const mainContentReadStatus = document.createElement('div');
-const mainContentDelete = document.createElement('div');
-
-// add class to main content
-mainContent.classList.add('mainContent');
-mainContentTitle.classList.add('mainContentTitle');
-mainContentAuthor.classList.add('mainContentAuthor');
-mainContentPages.classList.add('mainContentPages');
-mainContentReadStatus.classList.add('mainContentReadStatus');
-mainContentDelete.classList.add('mainContentDelete');
-
-// create element into content 
-const pTitle = document.createElement('p');
-const pAuthor = document.createElement('p');
-const pPages = document.createElement('p');
-const pReadStatus = document.createElement('p');
-const btnDelete = document.createElement('button');
-
-// add some element class
-btnDelete.classList.add('delete')
-
-// append elements to main content
-mainContentTitle.appendChild(pTitle);
-mainContentAuthor.appendChild(pAuthor);
-mainContentPages.appendChild(pPages);
-mainContentReadStatus.appendChild(pReadStatus);
-mainContentDelete.appendChild(btnDelete);
 
 // submit button
 const submitBtn = document.querySelector('.submit');
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Create DOM
+    // child elements
+    const mainContent = document.createElement('div');
+    const mainContentTitle = document.createElement('div');
+    const mainContentAuthor = document.createElement('div');
+    const mainContentPages = document.createElement('div');
+    const mainContentReadStatus = document.createElement('div');
+    const mainContentDelete = document.createElement('div');
+
+    // add class to main content
+    mainContent.classList.add('mainContent');
+    mainContentTitle.classList.add('mainContentTitle');
+    mainContentAuthor.classList.add('mainContentAuthor');
+    mainContentPages.classList.add('mainContentPages');
+    mainContentReadStatus.classList.add('mainContentReadStatus');
+    mainContentDelete.classList.add('mainContentDelete');
+
+    // create element into content 
+    const pTitle = document.createElement('p');
+    const pAuthor = document.createElement('p');
+    const pPages = document.createElement('p');
+    const pReadStatus = document.createElement('p');
+    const btnDelete = document.createElement('button');
+
+    // add some element class
+    btnDelete.classList.add('delete')
+
+    // append elements to main content
+    mainContentTitle.appendChild(pTitle);
+    mainContentAuthor.appendChild(pAuthor);
+    mainContentPages.appendChild(pPages);
+    mainContentReadStatus.appendChild(pReadStatus);
+    mainContentDelete.appendChild(btnDelete);
+
     // get the data
     const titleValue = document.querySelector('#title').value;
     const authorValue = document.querySelector('#author').value;
@@ -97,4 +100,10 @@ submitBtn.addEventListener("click", (e) => {
 
 });
 
-// push a test book into page
+// delete btn
+const deleteBtn = document.querySelector('.delete');
+deleteBtn.addEventListener("click", (e) => {
+    alert('test');
+});
+
+console.log(myLibrary);
