@@ -71,8 +71,6 @@ submitBtn.addEventListener("click", (e) => {
     // add some element class
     btnDelete.classList.add('delete')
 
-
-
     // append elements to main content
     mainContentTitle.appendChild(pTitle);
     mainContentAuthor.appendChild(pAuthor);
