@@ -19,13 +19,13 @@ input[type="number"] {
     font-size: 1rem;
 }
 
-.checked-mark{
+.checked-status{
     border: none;
     background-color: white;
     color: whtie;
     cursor: pointer;
     border-radius: 50%;
-    padding: 2px 6px;
+    padding: 2px 4px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.49);
 }
 
@@ -184,6 +184,7 @@ input[type="number"] {
     display: grid;;
     grid-template-columns: repeat(2, min-content);
     justify-content: center;
+    gap: 12px;
 }
 
 .mainContentDelete {
