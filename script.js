@@ -38,7 +38,6 @@ const mainContentTitle = document.createElement('div');
 const mainContentAuthor = document.createElement('div');
 const mainContentPages = document.createElement('div');
 const mainContentReadStatus = document.createElement('div');
-const mainContentCover = document.createElement('div');
 const mainContentDelete = document.createElement('div');
 
 // add class to main content
@@ -47,7 +46,6 @@ mainContentTitle.classList.add('mainContentTitle');
 mainContentAuthor.classList.add('mainContentAuthor');
 mainContentPages.classList.add('mainContentPages');
 mainContentReadStatus.classList.add('mainContentReadStatus');
-mainContentCover.classList.add('mainContentCover');
 mainContentDelete.classList.add('mainContentDelete');
 
 // create element into content 
@@ -55,7 +53,6 @@ const pTitle = document.createElement('p');
 const pAuthor = document.createElement('p');
 const pPages = document.createElement('p');
 const pReadStatus = document.createElement('p');
-const imgCover = document.createElement('img');
 const btnDelete = document.createElement('button');
 
 // add some element class
@@ -66,7 +63,6 @@ mainContentTitle.appendChild(pTitle);
 mainContentAuthor.appendChild(pAuthor);
 mainContentPages.appendChild(pPages);
 mainContentReadStatus.appendChild(pReadStatus);
-mainContentCover.appendChild(imgCover);
 mainContentDelete.appendChild(btnDelete);
 
 // submit button
@@ -77,7 +73,6 @@ submitBtn.addEventListener("click", (e) => {
     const titleValue = document.querySelector('#title').value;
     const authorValue = document.querySelector('#author').value;
     const pagesValue = document.querySelector ('#pages').value;
-    const coverValue = document.querySelector('#image-upload').value;
     const readValue = document.querySelector('input[name="readStatus"]:checked').value;
     const statusValue = readValue ? readValue.value : 'UNREAD';
 
@@ -86,7 +81,6 @@ submitBtn.addEventListener("click", (e) => {
     pAuthor.textContent = `${authorValue}`;
     pPages.textContent = `${pagesValue}`;
     pReadStatus.textContent = `${statusValue}`;
-    imgCover.src = coverValue;
     btnDelete.textContent = 'X';
 
     // append main content to container
@@ -95,11 +89,10 @@ submitBtn.addEventListener("click", (e) => {
     mainContent.appendChild(mainContentAuthor);
     mainContent.appendChild(mainContentPages);
     mainContent.appendChild(mainContentReadStatus);
-    mainContent.appendChild(mainContentCover);
     mainContent.appendChild(mainContentDelete);    
 
     // add the book to library;
-    AddToLibrary(titleValue, authorValue, pagesValue, statusValue, coverValue);
+    AddToLibrary(titleValue, authorValue, pagesValue, statusValue);
     console.log(myLibrary);
 
 });

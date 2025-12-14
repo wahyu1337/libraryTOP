@@ -10,7 +10,6 @@
 input[type="text"],
 input[type="number"] {
     min-width: 70px;
-    max-width: 250px;
     border: none;
     height: 25px;
     border-radius: 6px;
@@ -24,7 +23,7 @@ input[type="number"] {
 #container {
     display: grid;
     height: 100vh;
-    grid-template-columns: minmax(min-content,400px) 2fr;
+    grid-template-columns: minmax(200px,400px) 1fr;
 }
 
 .form {
@@ -71,7 +70,7 @@ input[type="number"] {
 
 .submit {
     padding: 8px;
-    width: 200px;
+    max-width: 200px;
     border: none;
     border-radius: 7px;
     box-shadow: 3px 5px 15px -6px #3d3d3d;
