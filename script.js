@@ -94,6 +94,14 @@ submitBtn.addEventListener("click", (e) => {
     mainContent.appendChild(mainContentPages);
     mainContent.appendChild(mainContentReadStatus);
     mainContent.appendChild(mainContentDelete);
+
+    readValue.addEventListener("click", () => {
+        if (readValue === 'READ'){
+            readValue.style.textDecoration = "line-through";
+        } else if (readValue === 'UNREAD'){
+            readValue.style.textDecoration = "none";
+        }
+    });
     
     btnDelete.addEventListener('click', () =>{
         display.removeChild(mainContent);
