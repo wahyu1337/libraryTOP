@@ -28,6 +28,12 @@ function AddToLibrary(title, author, pages, status, cover){
     myLibrary.push(book);
 };
 
+function bookDisplay(book){
+    for(let i = 0; i < myLibrary.length; i++){
+        console.log(myLibrary[i]);
+    }   
+}
+
 // page display
 // document manipulation
 const container = document.querySelector('#container');
@@ -65,6 +71,8 @@ submitBtn.addEventListener("click", (e) => {
     // add some element class
     btnDelete.classList.add('delete')
 
+
+
     // append elements to main content
     mainContentTitle.appendChild(pTitle);
     mainContentAuthor.appendChild(pAuthor);
@@ -76,14 +84,15 @@ submitBtn.addEventListener("click", (e) => {
     const titleValue = document.querySelector('#title').value;
     const authorValue = document.querySelector('#author').value;
     const pagesValue = document.querySelector ('#pages').value;
-    const readValue = document.querySelector('input[name="readStatus"]:checked').value;
-    const statusValue = readValue ? readValue.value : 'UNREAD';
+    let statusValue = document.querySelector('input[name="readStatus"]:checked').value;
+    let readValue = (statusValue === '1') ? 'READ' : 'UNREAD';
+     
 
     // insert data into element
     pTitle.textContent = `${titleValue}`;
     pAuthor.textContent = `${authorValue}`;
     pPages.textContent = `${pagesValue}`;
-    pReadStatus.textContent = `${statusValue}`;
+    pReadStatus.textContent = `${readValue}`;
     btnDelete.textContent = 'X';
 
     // append main content to container
@@ -96,7 +105,7 @@ submitBtn.addEventListener("click", (e) => {
 
     // add the book to library;
     AddToLibrary(titleValue, authorValue, pagesValue, statusValue);
-    console.log(myLibrary);
+    bookDisplay();
 
 });
 
@@ -105,5 +114,3 @@ const deleteBtn = document.querySelector('.delete');
 deleteBtn.addEventListener("click", (e) => {
     alert('test');
 });
-
-console.log(myLibrary);

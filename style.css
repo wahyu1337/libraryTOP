@@ -97,7 +97,7 @@ input[type="number"] {
 
 .contentTitle {
     display: grid;
-    grid-template-columns: minmax(350px, 1fr) minmax(150px, 1fr) repeat(2, minmax(100px, 250px)) minmax(20px, 100px);
+    grid-template-columns: minmax(350px, 1fr) minmax(150px, 1fr) repeat(2, minmax(150px, 250px)) minmax(20px, 100px);
     justify-items: center;
     color: white;
 }
@@ -136,7 +136,7 @@ input[type="number"] {
 
 .mainContent {
     display: grid;
-    grid-template-columns: minmax(350px, 1fr) minmax(150px, 1fr) repeat(2, minmax(100px, 250px)) minmax(20px, 100px);
+    grid-template-columns: minmax(350px, 1fr) minmax(150px, 1fr) repeat(2, minmax(150px, 250px)) minmax(20px, 100px);
     justify-items: center;
     align-items: center;
 }
