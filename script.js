@@ -1,13 +1,12 @@
 const myLibrary = [];
 
 // Constructor
-function Book(title, author, pages, status, cover){
+function Book(title, author, pages, status){
     this.bookId = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.status = status;
-    this.cover = cover;
 }
 
 // get book info (with prototype)
@@ -21,8 +20,8 @@ Book.prototype.getInfo = function(){
 };
 
 // add to library method
-function AddToLibrary(title, author, pages, status, cover){ 
-    const book = new Book (title, author, pages, status, cover);
+function AddToLibrary(title, author, pages, status){ 
+    const book = new Book (title, author, pages, status);
     
     //push the book to library
     myLibrary.push(book);
