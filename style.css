@@ -180,9 +180,6 @@ input[type="number"] {
     border: none;
 }
 
-.mainContentCover {
-}
-
 .mainContentReadStatus p read-toggle {
     color: red;
     text-decoration: line-through;
