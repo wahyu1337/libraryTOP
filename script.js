@@ -26,17 +26,48 @@ function AddToLibrary(title, author, pages, status, cover){
     
     //push the book to library
     myLibrary.push(book);
-}
-
-AddToLibrary("The Witcher 3", "Andrzej Sapkowski", "230", "UNREAD",);
-AddToLibrary("Harry Potters", "J.K Rowwling", "287", "READ");
-
+};
 
 // page display
 // document manipulation
-const container = document.querySelector("#container");
+const container = document.querySelector('#container');
+const display = document.querySelector('.display');
+// child elements
+const mainContent = document.createElement('div');
+const mainContentTitle = document.createElement('div');
+const mainContentAuthor = document.createElement('div');
+const mainContentPages = document.createElement('div');
+const mainContentReadStatus = document.createElement('div');
+const mainContentCover = document.createElement('div');
+const mainContentDelete = document.createElement('div');
 
-// element create   
+// add class to main content
+mainContent.classList.add('mainContent');
+mainContentTitle.classList.add('mainContentTitle');
+mainContentAuthor.classList.add('mainContentAuthor');
+mainContentPages.classList.add('mainContentPages');
+mainContentReadStatus.classList.add('mainContentReadStatus');
+mainContentCover.classList.add('mainContentCover');
+mainContentDelete.classList.add('mainContentDelete');
+
+// create element into content 
+const pTitle = document.createElement('p');
+const pAuthor = document.createElement('p');
+const pPages = document.createElement('p');
+const pReadStatus = document.createElement('p');
+const imgCover = document.createElement('img');
+const btnDelete = document.createElement('button');
+
+// add some element class
+btnDelete.classList.add('delete')
+
+// append elements to main content
+mainContentTitle.appendChild(pTitle);
+mainContentAuthor.appendChild(pAuthor);
+mainContentPages.appendChild(pPages);
+mainContentReadStatus.appendChild(pReadStatus);
+mainContentCover.appendChild(imgCover);
+mainContentDelete.appendChild(btnDelete);
 
 // submit button
 const submitBtn = document.querySelector('.submit');
@@ -50,10 +81,27 @@ submitBtn.addEventListener("click", (e) => {
     const readValue = document.querySelector('input[name="readStatus"]:checked').value;
     const statusValue = readValue ? readValue.value : 'UNREAD';
 
+    // insert data into element
+    pTitle.textContent = `${titleValue}`;
+    pAuthor.textContent = `${authorValue}`;
+    pPages.textContent = `${pagesValue}`;
+    pReadStatus.textContent = `${statusValue}`;
+    imgCover.src = coverValue;
+    btnDelete.textContent = 'X';
+
+    // append main content to container
+    display.appendChild(mainContent);
+    mainContent.appendChild(mainContentTitle);
+    mainContent.appendChild(mainContentAuthor);
+    mainContent.appendChild(mainContentPages);
+    mainContent.appendChild(mainContentReadStatus);
+    mainContent.appendChild(mainContentCover);
+    mainContent.appendChild(mainContentDelete);    
+
     // add the book to library;
     AddToLibrary(titleValue, authorValue, pagesValue, statusValue, coverValue);
     console.log(myLibrary);
 
-    // clear the container
-    container.innerHTML = '';
 });
+
+// push a test book into page

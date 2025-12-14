@@ -10,7 +10,7 @@
 input[type="text"],
 input[type="number"] {
     min-width: 70px;
-    max-width: 200px;
+    max-width: 250px;
     border: none;
     height: 25px;
     border-radius: 6px;
@@ -44,54 +44,14 @@ input[type="number"] {
 .form form {
     display: grid;
     grid-auto-rows: min-content;
-    gap: 20px;
+    gap: 40px;
 }
 
 .form-group {
     display: grid;
     gap: 7px;
-    max-width: 300px;
+    max-width: 400px;
 }
-
-.cover {
-    display: grid;
-    padding: 14px 12px;
-    max-width: 200px;
-    gap: 15px;
-    max-width: 300px;
-}
-
-.cover legend {
-    font-size: 0.9rem;
-}
-
-.cover-image {
-    font-size: 1rem;
-}
-
-input[type="file"] {
-    font-size: 0.9rem;
-}
-
-.uploadCoverImage {
-    font-size: 0.9rem;
-    padding: 8px;
-    width: 120px;
-    height: auto;
-    border-radius: 7px;
-    border: none;
-    color: white;
-    background-color: rgb(25, 121, 231);
-    box-shadow: 3px 5px 15px -9px #3d3d3d;
-    cursor: pointer;
-}
-
-.uploadCoverImage:hover {
-    transition: 0.09s;
-    background-color: rgb(68, 143, 228);
-    ;
-}
-
 
 .read {
     display: grid;
@@ -138,7 +98,7 @@ input[type="file"] {
 
 .contentTitle {
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr)) repeat(2, minmax(100px, 250px)) minmax(150px, 1fr) minmax(20px, 100px);
+    grid-template-columns: repeat(2, minmax(250px, 1fr)) repeat(2, minmax(100px, 250px)) minmax(20px, 100px);
     justify-items: center;
     color: white;
 }
@@ -146,8 +106,7 @@ input[type="file"] {
 .headTitle,
 .headAuthor,
 .headPages,
-.headReadStatus,
-.headCover {
+.headReadStatus {
     width: 100%;
     border: 1px solid black;
     display: grid;
@@ -171,17 +130,13 @@ input[type="file"] {
     grid-column: 4/5;
 }
 
-.headCover {
-    grid-column: 5/6;
-}
-
 .headDelete {
-    grid-column: 6/7;
+    grid-column: 5/6;
 }
 
 .mainContent {
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr)) repeat(2, minmax(100px, 250px)) minmax(150px, 1fr) minmax(20px, 100px);
+    grid-template-columns: repeat(2, minmax(250px, 1fr)) repeat(2, minmax(100px, 250px)) minmax(20px, 100px);
     justify-items: center;
     align-items: center;
 }
@@ -220,12 +175,8 @@ input[type="file"] {
     transition: 0.3s;
 }
 
-.mainContentCover {
-    grid-column: 5/6;
-}
-
 .mainContentDelete {
-    grid-column: 6/7;
+    grid-column: 5/6;
     border: none;
 }
 
