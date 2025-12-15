@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>    
     <title>BOOK LIBRARY</title>
 </head>
 <body>
@@ -78,12 +79,31 @@
                 </div>
                 <div class="mainContentReadStatus">
                     <p>READ</p>
-                    <button class="checked-mark">✓</button>
+                    <button class="checked-mark" style="cursor: default;">✓</button>
                 </div>
                 <div class="mainContentDelete">
                     
                 </div>  
-            </div>            
+            </div>
+            
+            <div class="mainContent">        
+                <div class="mainContentTitle">
+                    <p>The Witcher: Blood Origin</p>
+                </div>
+                <div class="mainContentAuthor">
+                    <p>Andrzej Sapkowski</p>
+                </div>
+                <div class="mainContentPages">
+                    <p>350</p>
+                </div>
+                <div class="mainContentReadStatus">
+                    <p>UNREAD</p>
+                    <button class="checked-mark" style="background-color: red; cursor: default;">X</button>
+                </div>
+                <div class="mainContentDelete">
+                    
+                </div>  
+            </div>      
         </div>
     </div>
     <script src="script.js"></script>
