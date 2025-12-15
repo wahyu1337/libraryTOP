@@ -39,7 +39,7 @@ submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Create DOM
-    // child elements for display
+    // create child elements for display
     const mainContent = document.createElement('div');
     const mainContentTitle = document.createElement('div');
     const mainContentAuthor = document.createElement('div');
@@ -60,16 +60,19 @@ submitBtn.addEventListener("click", (e) => {
     const pAuthor = document.createElement('p');
     const pPages = document.createElement('p');
     const pReadStatus = document.createElement('p');
+    const btnRead = document.createElement('button');
     const btnDelete = document.createElement('button');
 
     // add some element class
-    btnDelete.classList.add('delete')
+    btnDelete.classList.add('delete');
+    btnRead.classList.add('checked-mark');
 
     // append elements to main content
     mainContentTitle.appendChild(pTitle);
     mainContentAuthor.appendChild(pAuthor);
     mainContentPages.appendChild(pPages);
     mainContentReadStatus.appendChild(pReadStatus);
+    mainContentReadStatus.appendChild(btnRead);
     mainContentDelete.appendChild(btnDelete);
 
     // get the data
@@ -85,6 +88,15 @@ submitBtn.addEventListener("click", (e) => {
     pAuthor.textContent = `${authorValue}`;
     pPages.textContent = `${pagesValue}`;
     pReadStatus.textContent = `${readValue}`;
+    // read status button
+    if (statusValue === '1'){
+        btnRead.textContent = '✓';       
+    } else {
+        btnRead.textContent = 'X';
+        btnRead.style.backgroundColor = 'red';
+        btnRead.style.color = 'white';
+    }
+
     btnDelete.textContent = 'X';
 
     // append main content to html container
@@ -95,14 +107,22 @@ submitBtn.addEventListener("click", (e) => {
     mainContent.appendChild(mainContentReadStatus);
     mainContent.appendChild(mainContentDelete);
 
-    readValue.addEventListener("click", () => {
-        if (readValue === 'READ'){
-            readValue.style.textDecoration = "line-through";
-        } else if (readValue === 'UNREAD'){
-            readValue.style.textDecoration = "none";
+    btnRead.addEventListener("click", () => {
+        if(statusValue === '1'){
+            btnRead.textContent = 'X';
+            btnRead.style.backgroundColor = 'red';
+            btnRead.style.color = 'white';
+            statusValue = '0';
+            pReadStatus.textContent = 'UNREAD';
+        } else if (statusValue === '0'){
+            btnRead.textContent = '✓';
+            btnRead.style.backgroundColor = 'rgba(7, 175, 7, 0.884)';
+            statusValue = '1';
+            pReadStatus.textContent = 'READ';
         }
     });
-    
+
+           
     btnDelete.addEventListener('click', () =>{
         display.removeChild(mainContent);
     });
