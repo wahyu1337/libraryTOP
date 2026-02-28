@@ -1,23 +1,25 @@
 const myLibrary = [];
-
-// Constructor
-function Book(title, author, pages, status){
-    this.bookId = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
-}
-
-// get book info (with prototype)
-Book.prototype.getInfo = function(){
-    console.log(`
-        Id: ${this.bookId}
-        Title: ${this.title}
-        Author: ${this.author}
-        Pages: ${this.pages}
-        Status ${this.status}`)
-};
+// class
+class Book{
+    // constructor
+    constructor(title, author, pages, status){
+        this.BookId = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status
+    }
+    // getter
+    get getInfo(){
+        console.log(`
+            Id: ${this.BookId}
+            Title: ${this.title}
+            Author: ${this.author}
+            Pages: ${this.pages}
+            Status: ${this.status}
+            `)
+    }
+} 
 
 // add to library method
 function AddToLibrary(title, author, pages, status){ 
